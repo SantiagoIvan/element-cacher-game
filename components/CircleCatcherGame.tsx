@@ -494,21 +494,6 @@ export default function App() {
                     <ResultModal score={finalScore} target={target!} onMenu={() => setPhase("home")} onReplay={handleReplay} />
                 </>
             )}
-            {/*<button
-                onClick={toggle}
-                style={{
-                    position: "fixed", bottom: 24, right: 24, zIndex: 100,
-                    background: "var(--bg-modal)", border: "1px solid var(--border-modal)",
-                    borderRadius: "50%", width: 44, height: 44,
-                    fontSize: 20, cursor: "pointer",
-                    boxShadow: "0 2px 12px rgba(0,0,0,0.3)",
-                    transition: "transform 0.15s",
-                }}
-                onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
-                onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
-            >
-                {isDark ? "☀️" : "🌙"}
-            </button>*/}
         </div>
     );
 }
