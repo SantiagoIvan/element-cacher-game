@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useCallback, CSSProperties } from "react";
+import {useTheme} from "@/hooks/useTheme";
 
 // ── ENV Config ────────────────────────────────────────────────────────────────
 
@@ -69,6 +70,7 @@ function makeCircle(width: number): Circle {
 }
 
 function getRank(score: number): { label: string; color: string } {
+    return { label: "",           color: "" };
     if (score >= 200) return { label: "LEYENDA",           color: "#ffe03b" };
     if (score >= 100) return { label: "EXPERTO",           color: "#3bff6a" };
     if (score >= 50)  return { label: "BUENO",             color: "#3b8fff" };
@@ -437,6 +439,7 @@ export default function App() {
     const [countdown, setCountdown] = useState(COUNTDOWN_START);
     const [finalScore, setFinalScore] = useState(0);
     const [target, setTarget] = useState<TargetImage | null>(null);
+    const { toggle, isDark } = useTheme();
 
     const startSelection = useCallback(() => {
         setTarget(pickRandom(TARGET_IMAGES));
@@ -469,7 +472,7 @@ export default function App() {
     }, []);
 
     return (
-        <div style={{ width: "100vw", height: "100vh", background: "#080810", overflow: "hidden", position: "relative" }}>
+        <div style={{ width: "100vw", height: "100vh", background: "var(--bg-primary)", overflow: "hidden", position: "relative" }}>
             {phase === "home" && <HomeScreen onPlay={startSelection} />}
 
             {(phase === "countdown" || phase === "game") && (
@@ -491,6 +494,21 @@ export default function App() {
                     <ResultModal score={finalScore} target={target!} onMenu={() => setPhase("home")} onReplay={handleReplay} />
                 </>
             )}
+            {/*<button
+                onClick={toggle}
+                style={{
+                    position: "fixed", bottom: 24, right: 24, zIndex: 100,
+                    background: "var(--bg-modal)", border: "1px solid var(--border-modal)",
+                    borderRadius: "50%", width: 44, height: 44,
+                    fontSize: 20, cursor: "pointer",
+                    boxShadow: "0 2px 12px rgba(0,0,0,0.3)",
+                    transition: "transform 0.15s",
+                }}
+                onMouseOver={(e) => (e.currentTarget.style.transform = "scale(1.1)")}
+                onMouseOut={(e) => (e.currentTarget.style.transform = "scale(1)")}
+            >
+                {isDark ? "☀️" : "🌙"}
+            </button>*/}
         </div>
     );
 }
@@ -508,7 +526,7 @@ const s: Record<string, CSSProperties> = {
     screen: {
         width: "100%", height: "100%",
         display: "flex", flexDirection: "column",
-        background: "#080810",
+        background: "var(--bg-primary)",
         position: "relative", overflow: "hidden",
         fontFamily: "'Courier New', monospace",
     },
