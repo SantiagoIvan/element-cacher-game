@@ -565,7 +565,7 @@ const s: Record<string, CSSProperties> = {
         borderBottom: "1px solid #1a1a2e", flexShrink: 0, zIndex: 5,
     },
     hudScore: {
-        display: "flex", flexDirection: "column", lineHeight: 1,
+        display: "flex", flexDirection: "column", lineHeight: 1,alignItems: "center"
     },
     timerWrap: {
         position: "relative", width: 64, height: 64,
