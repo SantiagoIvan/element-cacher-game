@@ -1,0 +1,1 @@
+export type GamePhase = "home" | "countdown" | "game" | "result";

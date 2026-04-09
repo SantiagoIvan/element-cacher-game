@@ -1,0 +1,1 @@
+export const CIRCLE_COLORS = ["red", "blue", "green", "yellow", "purple", "orange"] as const;
