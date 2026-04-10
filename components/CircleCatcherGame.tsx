@@ -483,7 +483,11 @@ export default function App() {
     }, []);
 
     return (
-        <div style={{ width: "100vw", height: "100vh", background: "var(--bg-primary)", overflow: "hidden", position: "relative" }}>
+        <div
+            style={{ width: "100vw", height: "100vh", overflow: "hidden", position: "relative" }}
+            className={"pattern-bg bg-(--bg-primary)"}
+        >
+
             {phase === "home" && <HomeScreen onPlay={startSelection} />}
 
             {(phase === "countdown" || phase === "game") && (
@@ -522,7 +526,7 @@ const s: Record<string, CSSProperties> = {
     screen: {
         width: "100%", height: "100%",
         display: "flex", flexDirection: "column",
-        background: "var(--bg-primary)",
+        //background: "var(--bg-primary)",
         position: "relative", overflow: "hidden",
         fontFamily: "'Courier New', monospace",
     },
@@ -567,7 +571,8 @@ const s: Record<string, CSSProperties> = {
         fontFamily: "'Courier New', monospace",
     },
     secondaryBtn: {
-        background: "transparent", color: "#aaa",
+        background: "transparent",
+        color: "#aaa",
         border: "1px solid #333", padding: "14px 20px",
         fontSize: 14, fontWeight: 700, borderRadius: 6,
         cursor: "pointer", letterSpacing: 2, fontFamily: "'Courier New', monospace",
@@ -575,7 +580,7 @@ const s: Record<string, CSSProperties> = {
     },
     hud: {
         display: "flex", alignItems: "center", justifyContent: "space-between",
-        padding: "12px 24px", background: "#0a0a16",
+        padding: "12px 24px", //background: "#0a0a16",
         borderBottom: "1px solid #1a1a2e", flexShrink: 0, zIndex: 5,
     },
     hudScore: {
