@@ -522,7 +522,7 @@ const s: Record<string, CSSProperties> = {
     screen: {
         width: "100%", height: "100%",
         display: "flex", flexDirection: "column",
-        //background: "var(--bg-primary)",
+        background: "var(--bg-primary)",
         position: "relative", overflow: "hidden",
         fontFamily: "'Courier New', monospace",
     },
@@ -547,7 +547,7 @@ const s: Record<string, CSSProperties> = {
         color: "#555", fontSize: 14, letterSpacing: 4, textTransform: "uppercase", margin: 0,
     },
     rulesBox: {
-        //background: "#0e0e1a",
+        background: "#0e0e1a",
         border: "1px solid #222",
         borderRadius: 8, padding: "16px 24px",
         display: "flex", flexDirection: "column", gap: 10,
@@ -591,17 +591,17 @@ const s: Record<string, CSSProperties> = {
     bottomLine: {
         position: "absolute", bottom: 0, left: 0, right: 0,
         height: 2,
-        //background: "#ff3b3b44",
+        background: "#ff3b3b44",
         boxShadow: "0 0 12px #ff3b3b66",
     },
     modalOverlay: {
         position: "absolute", inset: 0, zIndex: 20,
-        //background: "rgba(0,0,0,0.82)",
+        background: "rgba(0,0,0,0.82)",
         display: "flex", alignItems: "center", justifyContent: "center",
         backdropFilter: "blur(4px)",
     },
     modalBox: {
-       // background: "#0e0e1a",
+        background: "#0e0e1a",
         border: "1px solid #2a2a3e",
         borderRadius: 16, padding: "40px 56px",
         display: "flex", flexDirection: "column",
