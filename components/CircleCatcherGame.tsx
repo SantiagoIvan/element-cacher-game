@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback, CSSProperties } from "react";
 import {useTheme} from "@/hooks/useTheme";
+import Image from "next/image";
 
 // ── ENV Config ────────────────────────────────────────────────────────────────
 
@@ -119,6 +120,16 @@ function HomeScreen({ onPlay }: { onPlay: () => void }) {
         <div style={s.screen}>
             <div style={s.scanlines} />
             <div style={s.homeContent}>
+                <img
+                    src="/Tregar_logo.jpg"
+                    alt="Tregar"
+                    style={{
+                        height: 48,
+                        width: "auto",
+                        objectFit: "contain",
+                        marginBottom: 8,
+                    }}
+                />
                 <div style={s.titleWrap}>
                     {TITLE.split("").map((char, i) => {
                         const color = colors[i % colors.length];
@@ -511,7 +522,7 @@ const s: Record<string, CSSProperties> = {
     screen: {
         width: "100%", height: "100%",
         display: "flex", flexDirection: "column",
-        background: "var(--bg-primary)",
+        //background: "var(--bg-primary)",
         position: "relative", overflow: "hidden",
         fontFamily: "'Courier New', monospace",
     },
@@ -536,7 +547,8 @@ const s: Record<string, CSSProperties> = {
         color: "#555", fontSize: 14, letterSpacing: 4, textTransform: "uppercase", margin: 0,
     },
     rulesBox: {
-        background: "#0e0e1a", border: "1px solid #222",
+        //background: "#0e0e1a",
+        border: "1px solid #222",
         borderRadius: 8, padding: "16px 24px",
         display: "flex", flexDirection: "column", gap: 10,
     },
@@ -545,7 +557,9 @@ const s: Record<string, CSSProperties> = {
         color: "#aaa", fontSize: 15,
     },
     playBtn: {
-        background: "#ff3b3b", color: "#fff", border: "none",
+        background: "#ff3b3b",
+        color: "#fff",
+        border: "none",
         padding: "14px 48px", fontSize: 20, fontWeight: 900,
         borderRadius: 6, cursor: "pointer", letterSpacing: 4,
         boxShadow: "0 0 32px #ff3b3b88",
@@ -576,21 +590,24 @@ const s: Record<string, CSSProperties> = {
     },
     bottomLine: {
         position: "absolute", bottom: 0, left: 0, right: 0,
-        height: 2, background: "#ff3b3b44",
+        height: 2,
+        //background: "#ff3b3b44",
         boxShadow: "0 0 12px #ff3b3b66",
     },
     modalOverlay: {
         position: "absolute", inset: 0, zIndex: 20,
-        background: "rgba(0,0,0,0.82)",
+        //background: "rgba(0,0,0,0.82)",
         display: "flex", alignItems: "center", justifyContent: "center",
         backdropFilter: "blur(4px)",
     },
     modalBox: {
-        background: "#0e0e1a", border: "1px solid #2a2a3e",
+       // background: "#0e0e1a",
+        border: "1px solid #2a2a3e",
         borderRadius: 16, padding: "40px 56px",
         display: "flex", flexDirection: "column",
         alignItems: "center", gap: 4,
         boxShadow: "0 0 80px #000",
         animation: "popIn 0.25s ease",
     },
+
 };
